@@ -1,0 +1,68 @@
+= Vert.x-Web examples
+
+Here you will find examples demonstrating Vert.x-Web in action.
+
+Vert.x-Web is a tool-kit for writing web applications with Vert.x. Please consult the Vert.x-Web manual for detailed
+documentation on Vert.x-Web.
+
+
+== Dependencies required
+
+To use Vert.x-Web in your own Maven or Gradle project you will need following dependencies
+
+----
+Group ID: io.vertx
+Artifact ID: vertx-core
+----
+
+and
+
+----
+Group ID: io.vertx
+Artifact ID: vertx-web
+----
+
+
+== Simple REST Micro-service
+
+Vert.x-Web is a great fit for HTTP/REST microservices.
+
+Here's a simple micro-service example which implements an API for a product catalogue.
+
+The link:src/main/java/io/vertx/example/web/rest/SimpleREST.java[Java REST Microservice example]
+
+The API allows you to list all products, retrieve details for a particular product and to add a new product.
+
+Product information is provided in JSON.
+
+List all products:: GET /products
+Get a product:: GET /products/<product_id>
+Add a product:: PUT /products/<product_id>
+
+Run the server either in your IDE or on the command line, then open your browser and hit
+link:http://localhost:8080/products[list products] to start playing with the API.
+
+
+== Angular example
+
+This example shows a basic single page application built with Angular JS. It is quite similar to the REST example, the
+only difference is that it also serves an angular app. The example expects that there is a local instance of mongo db
+running.
+
+The link:src/main/java/io/vertx/example/web/angularjs[Java angular example]
+
+Run the server either in your IDE or on the command line, then open your browser and hit
+link:http://localhost:8080 and click around the links
+
+For login use username: tim password: sausages
+
+== Blocking handler example
+
+This example shows a blocking handler which blocks the calling thread for 5 seconds before calling the next handler
+to serve the page.
+
+Blocking handlers are run on a worker thread and don't block an event loop.
+
+Run the server either in your IDE or on the command line, then open your browser and hit
+link:http://localhost:8080 - after 5 seconds the response should arrive.
+

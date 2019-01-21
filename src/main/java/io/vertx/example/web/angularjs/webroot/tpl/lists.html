@@ -1,0 +1,13 @@
+<h1>Images Page: Created By Ramesh 647-285-0432</h1>
+<table class="table table-condensed">
+    <tbody>
+    <tr ng-repeat="img in images">
+        <td align="center">Album ID : {{img.albumId}} | Image ID: {{img.id}}
+            <h4>Title : {{img.title}}</h4>
+
+            <img src="{{img.url}}" alt="Image loaded from external source">
+
+        </td>
+    </tr>
+    </tbody>
+</table>
