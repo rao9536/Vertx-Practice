@@ -41,6 +41,7 @@ public class Server extends AbstractVerticle {
           HttpClient httpClient = HttpClientBuilder.create().build();
           HttpGet httpGet = new HttpGet(url);
           ResponseHandler<String> responseHandler = new BasicResponseHandler();
+          
           // accepting the response from given url
           String responseBody = httpClient.execute(httpGet, responseHandler);
           jsonArray = (JSONArray) parser.parse(responseBody);
