@@ -14,12 +14,11 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class Server extends AbstractVerticle {
 
-  // Convenience method so you can run it in your IDE
+  // vertx application starting
   public static void main(String[] args) {
     Runner.runExample(Server.class);
   }
@@ -28,20 +27,21 @@ public class Server extends AbstractVerticle {
   @Override
   public void start() throws Exception {
 
-
     Router router = Router.router(vertx);
-
     router.route().handler(BodyHandler.create());
 
-    // define some REST API
-    router.get("/api/usersList").handler(ctx -> {
+    // define rest api to accpet request
+    router.get("/api/imageList").handler(ctx -> {
         JSONArray jsonArray=new JSONArray();
         JSONParser parser = new JSONParser();
       try {
+          // external source for images
           String url = "https://jsonplaceholder.typicode.com/photos";
+          // httpclient to connect with given url
           HttpClient httpClient = HttpClientBuilder.create().build();
           HttpGet httpGet = new HttpGet(url);
           ResponseHandler<String> responseHandler = new BasicResponseHandler();
+          // accepting the response from given url
           String responseBody = httpClient.execute(httpGet, responseHandler);
           jsonArray = (JSONArray) parser.parse(responseBody);
 
@@ -58,7 +58,6 @@ public class Server extends AbstractVerticle {
             json.add(object);
         }
 
-
         ctx.response().putHeader(HttpHeaders.CONTENT_TYPE, "application/json");
         ctx.response().end(json.encode());
         System.out.println("All images sent to response object");
@@ -69,8 +68,8 @@ public class Server extends AbstractVerticle {
     // Create a router endpoint for the static content.
     router.route().handler(StaticHandler.create());
 
-    vertx.createHttpServer().requestHandler(router).listen(8090);
+    // setting up the port
+    vertx.createHttpServer().requestHandler(router).listen(8443);
   }
-
 
 }

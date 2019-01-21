@@ -9,7 +9,8 @@ import java.util.function.Consumer;
 
 public class Runner {
 
-  private static final String WEB_EXAMPLES_DIR = "web-examples";
+  // project and directory path
+  private static final String WEB_EXAMPLES_DIR = "Vertx-Practice";
   private static final String WEB_EXAMPLES_JAVA_DIR = WEB_EXAMPLES_DIR + "/src/main/java/";
 
   public static void runExample(Class clazz) {
@@ -21,17 +22,11 @@ public class Runner {
     runExample(exampleDir + clazz.getPackage().getName().replace(".", "/"), clazz.getName(), options, deploymentOptions);
   }
 
-
-/*  public static void runScriptExample(String prefix, String scriptName, VertxOptions options) {
-    File file = new File(scriptName);
-    String dirPart = file.getParent();
-    String scriptDir = prefix + dirPart;
-    runExample(scriptDir, scriptDir + "/" + file.getName(), options, null);
-  }*/
-
+  // running vertx application
   public static void runExample(String exampleDir, String verticleID, VertxOptions options, DeploymentOptions deploymentOptions) {
     if (options == null) {
       options = new VertxOptions();
+      options.setBlockedThreadCheckInterval(10000*60*60);
     }
     try {
       File current = new File(".").getCanonicalFile();

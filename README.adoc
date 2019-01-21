@@ -1,4 +1,4 @@
-= Vert.x-Web examples
+= Vert.x- Vertx-Practice
 
 Here you will find examples demonstrating Vert.x-Web in action.
 
@@ -8,7 +8,7 @@ documentation on Vert.x-Web.
 
 == Dependencies required
 
-To use Vert.x-Web in your own Maven or Gradle project you will need following dependencies
+To use Vert.x-Web in your own Maven project you will need following dependencies
 
 ----
 Group ID: io.vertx
@@ -23,46 +23,38 @@ Artifact ID: vertx-web
 ----
 
 
-== Simple REST Micro-service
+== Vertex-Practice Web-service
 
-Vert.x-Web is a great fit for HTTP/REST microservices.
+Vert.x-Web is a great fit for HTTP/REST web-services.
 
-Here's a simple micro-service example which implements an API for a product catalogue.
+Here's a simple web-service example which implements an API for a image list functionality.
 
-The link:src/main/java/io/vertx/example/web/rest/SimpleREST.java[Java REST Microservice example]
+The link:src/main/java/io/vertx/example/web/rest/Server.java
 
-The API allows you to list all products, retrieve details for a particular product and to add a new product.
+The API allows you to extract the image list from external url and send the response to front end.
 
-Product information is provided in JSON.
+Image list is provided in JSON array.
 
-List all products:: GET /products
-Get a product:: GET /products/<product_id>
-Add a product:: PUT /products/<product_id>
+List all images:: GET http://localhost:8443
+
 
 Run the server either in your IDE or on the command line, then open your browser and hit
-link:http://localhost:8080/products[list products] to start playing with the API.
+link:http://localhost:8443 to start playing with the API.
 
 
-== Angular example
+== Front End -- Html and Angularjs
 
-This example shows a basic single page application built with Angular JS. It is quite similar to the REST example, the
-only difference is that it also serves an angular app. The example expects that there is a local instance of mongo db
-running.
+This example shows a basic single page application built with Angular JS.
 
-The link:src/main/java/io/vertx/example/web/angularjs[Java angular example]
+A very simple html page is created to show the images in the middle of the page according to the image id.
 
-Run the server either in your IDE or on the command line, then open your browser and hit
-link:http://localhost:8080 and click around the links
+-- on the top of image:
+       -- Album id, image id and title is given
 
-For login use username: tim password: sausages
 
-== Blocking handler example
+== To compile the project and get jar file
 
-This example shows a blocking handler which blocks the calling thread for 5 seconds before calling the next handler
-to serve the page.
+   -- run "mvn package" command in terminal and a jar file named
+       as Vertx-Practice-3.6.1.jar will be created in target folder.
 
-Blocking handlers are run on a worker thread and don't block an event loop.
-
-Run the server either in your IDE or on the command line, then open your browser and hit
-link:http://localhost:8080 - after 5 seconds the response should arrive.
 

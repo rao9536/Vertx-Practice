@@ -2,22 +2,22 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile name="Annotation profile for web-examples" enabled="true">
+      <profile name="Annotation profile for Vertx-Practice" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <option name="codetrans.config" value="C:\web-examples/codetrans-config.json" />
-        <option name="codetrans.output" value="C:\web-examples/src/main" />
-        <module name="web-examples" />
+        <option name="codetrans.config" value="C:\Vertx-Practice/codetrans-config.json" />
+        <option name="codetrans.output" value="C:\Vertx-Practice/src/main" />
+        <module name="Vertx-Practice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="web-examples" target="1.8" />
+      <module name="Vertx-Practice" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="web-examples" options="-Acodetrans.output=C:\web-examples/src/main -Acodetrans.config=C:\web-examples/codetrans-config.json" />
+      <module name="Vertx-Practice" options="-Acodetrans.output=C:\Vertx-Practice/src/main -Acodetrans.config=C:\Vertx-Practice/codetrans-config.json" />
     </option>
   </component>
 </project>

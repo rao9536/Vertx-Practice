@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.vertx</groupId>
-  <artifactId>web-examples</artifactId>
+  <artifactId>Vertx-Practice</artifactId>
   <version>3.6.1</version>
 
   <properties>
@@ -48,9 +48,6 @@
           <scope>test</scope>
       </dependency>
 
-
-
-
       <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-web-templ-handlebars</artifactId>
@@ -63,36 +60,7 @@
       <version>${project.version}</version>
       <classifier>shaded</classifier>
     </dependency>
-   <!-- <dependency>
-      <groupId>io.vertx</groupId>
-      <artifactId>vertx-web-templ-mvel</artifactId>
-      <version>${project.version}</version>
-      <classifier>shaded</classifier>
-    </dependency>
-    <dependency>
-      <groupId>io.vertx</groupId>
-      <artifactId>vertx-web-templ-thymeleaf</artifactId>
-      <version>${project.version}</version>
-      <classifier>shaded</classifier>
-    </dependency>
-    <dependency>
-      <groupId>io.vertx</groupId>
-      <artifactId>vertx-web-templ-freemarker</artifactId>
-      <version>${project.version}</version>
-      <classifier>shaded</classifier>
-    </dependency>
-    <dependency>
-      <groupId>io.vertx</groupId>
-      <artifactId>vertx-web-templ-pebble</artifactId>
-      <version>${project.version}</version>
-      <classifier>shaded</classifier>
-    </dependency>
-    <dependency>
-      <groupId>io.vertx</groupId>
-      <artifactId>vertx-web-templ-rocker</artifactId>
-      <version>${project.version}</version>
-      <classifier>shaded</classifier>
-    </dependency>-->
+
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-web-api-contract</artifactId>
@@ -103,8 +71,6 @@
           <artifactId>json-simple</artifactId>
           <version>1.1.1</version>
       </dependency>
-
-
   </dependencies>
 
   <build>
